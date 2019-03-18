@@ -1,0 +1,4 @@
+[submodule "vendor/hypriot-flash"]
+	path = vendor/hypriot-flash
+	url = https://github.com/hypriot/flash
+	shallow = true

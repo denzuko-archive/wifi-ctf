@@ -1,0 +1,13 @@
+node_modules/
+.vagrant/
+*.img
+image*
+*.yaml
+*.ini
+*.zip
+*.gz
+loo
+*.dmg
+wifi.yml
+flash-wifi.sh
+flash.sh

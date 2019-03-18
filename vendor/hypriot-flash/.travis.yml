@@ -1,0 +1,9 @@
+os: osx
+language: bash
+script:
+  - node --version
+  - npm install
+  - brew install shellcheck
+  - brew install pv
+  - shellcheck -s bash flash
+  - npm test
