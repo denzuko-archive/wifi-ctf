@@ -2,34 +2,44 @@
 
 By Dwight A. Spencer (@denzuko)
 
-Challenge goals: 
+
+Welcome to Terminal City, an ongoing campaing for Midnight Makers CTF. You join us as a netizen of one of the
+more unique, politically corrupt, and technologically advance cities. 
+
+## Special Thanks To
+
+- clmyster
+- mikrotik
+- hypriot
+- Dallas Makerspace
+- VCC Computer Committee Supporters
+- and Hackers like you.
+
+## Challenge goals: 
 
 Teach WPA security, WIFI access, basic common passwords not to use, and bash basics
 
-## Special thanks to
+## Project Goals:
 
-- clmyster
-- mirotick
-- hypriot
-- VCC Computer Committee Supporters
-- Dallas Makerspace
+Build infrastructure and asset library for rapid deployment of docker based honeypot cluster, communitygrid, and/or other
+projects.
+
 
 ## Bill of Materials
 
 ### Hardware
+
 | Item | Catalog Url | quantity |  cost per unit |
 |-|-|-|-|
 | Mikrotik-RB941-2nD-TC-Lite-2-4Ghz-802-11b | https://www.amazon.com/dp/B016E93MX2 | 1 unit|  29.98 |
 | CanaKit-Raspberry-Wireless-Complete-Starter |https://www.amazon.com/dp/B072N3X39J | 3 units| 32.99 |
-| Samsung-MicroSD-Adapter-MB-ME32GA-AM | https://www.amazon.com/dp/B06XWN9Q99 | 3 units| 7.99 |
 
-Cost: $70.96
+Cost: $128.95
 
 ## Install
 
 1) One should use etcher / dd(1) to burn hypriot to SD Cards for three Raspberry Pis
-1.1) vendor/hypriot-flash/flash https://github.com/hypriot/image-builder-rpi/releases/download/v1.10.0/hypriotos-rpi-v1.10.0.img.zip
-
+1.1) Prefered; use hypriot-flash and `make(1)`
 
 2) Reset MikroTIK hAP to factory then configure two access points
    - "Terminal City PD 0x19" (city, target, year) WPA:Password
@@ -49,7 +59,6 @@ Cost: $70.96
 
 6) Test docker cluster and deploy images as needed
 
-
 ## Running
 
 1) Pull internet from hAP
@@ -59,3 +68,14 @@ Cost: $70.96
 5) Do Installfest (docker && kali:latest)
 6) Scoring is the same as "who's line is it anyways" ie "points are arubtrary but the most wins"
 7) Winners get added to the list of elites (for livestream and etc..)
+
+
+### External links
+  - https://wiki.mikrotik.com/wiki/Using_SSH_for_system_backup
+  - https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps
+  - https://gist.github.com/tcarrio/4fdd2ed310e23a3b54fd64da6b07435a
+  - https://github.com/dallas-makerspace/communitygrid
+
+## Join us online
+
+[Talk](talk.dallasmakerspace.org) and [Chat](chat.dallasmakerspace.org). Need help, visit [helpdesk](helpdesk.dallasmakerspace.org)
