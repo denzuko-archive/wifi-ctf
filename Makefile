@@ -1,12 +1,24 @@
-IMAGE_VERSION	:= v1.10.0
-IMAGE_URL	:= https://github.com/hypriot/image-builder-rpi/releases/download/$(IMAGE_VERSION)/hypriotos-rpi-$(IMAGE_VERSION).img.zip
+IMAGE_VERSION		:= v1.10.0
+IMAGE_URL		:= https://github.com/hypriot/image-builder-rpi/releases/download/$(IMAGE_VERSION)/hypriotos-rpi-$(IMAGE_VERSION).img.zip
+HYPRIOT_FLASH		:= ./vendor/hypriot-flash/flash
+HYPRIOT_FLASH_OPTS	:= -u ./src/userdata.yml -f ./deploy.tgz -l true  $(IMAGE_URL)
 
-all: vendor/hypriot-flash/flash userdata.yml
+.PHONY: all clean
+.DEFAULT: all
 
-	vendor/hypriot-flash/flash -u userdata.yml -f deploy.tgz -l true 
+all: deps install
+
+deps: $(HYPRIOT_FLASH)
+
+$(HYPRIOT_FLASH):
+	@git submodule update --recursive --remote --depth 1
 
 deploy.tgz:
-	tar cvf $@ deploy/ motd.txt
+	@cd src && tar cvf ../$@ deploy motd.txt
 
-vendor/hypriot-flash/flash:
-	git submodule update --recursive --remote --depth 1
+	
+install: deploy.tgz ./src/userdata.yml
+	@$(HYPRIOT_FLASH) $(HYPRIOT_FLASH_OPTS)
+
+clean:
+	@-rm -rf deploy.tgz
