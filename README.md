@@ -15,6 +15,11 @@ more unique, politically corrupt, and technologically advance cities.
 - VCC Computer Committee Supporters
 - and Hackers like you.
 
+
+## Challenge Rating
+
+Neophyte
+
 ## Challenge goals: 
 
 Teach WPA security, WIFI access, basic common passwords not to use, and bash basics

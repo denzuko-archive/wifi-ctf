@@ -29,6 +29,10 @@ users:
     lock_passwd: false
     ssh_pwauth: true
     chpasswd: { expire: false }
+    ssh-import-id: None
+    lock_passwd: true
+    ssh-authorized-keys:
+      - ssh-rsa AAAA....NN   # insert your SSH public key ~/.ssh/id_rsa.pub here
 
 # # Set the locale of the system
 locale: "en_US.UTF-8"
@@ -89,7 +93,5 @@ runcmd:
   - 'mkdir -p /ctf'
   - 'cp -au /boot/deploy /ctf'
   - 'cp /boot/motd /etc/motd'
-
-
 #  # Activate WiFi interface
   - 'ifup wlan0'
